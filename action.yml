@@ -1,0 +1,22 @@
+name: 'Playground action'
+description: 'Execute Napptive Playground command'
+inputs:
+  cmd:
+    description: 'Command to execute'
+    required: true
+  environment:
+    description: 'To specify a target account/environment'
+    required: false
+  config:
+    description: 'To use a custom YAML file to change the target playground installation'
+    required: false
+outputs:
+  time: # id of output
+    description: 'The time the action was executed'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cmd }}
+    - ${{ inputs.environment }}
+    - ${{ inputs.config }}
