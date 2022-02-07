@@ -10,6 +10,10 @@ cmd=$1
 environment=$2
 configFile=$3
 
+# add actual dir to the path to allow execute the playground command
+# required in deploy command
+export PATH=$PATH:./
+
 ## cmd cannot be empty
 if [[ -z "$cmd" ]]; then
     echo "cmd can not be empty"
