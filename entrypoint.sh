@@ -10,17 +10,10 @@ cmd=$1
 environment=$2
 configFile=$3
 
-function printExit {
-    time=$(date)
-    echo "::set-output name=time::$time"
-    exit $EXIT
-}
-
 ## cmd cannot be empty
 if [[ -z "$cmd" ]]; then
     echo "cmd can not be empty"
-    EXIT=-1
-    printExit
+    exit -1
 fi
 
 # if there is a configFile...
@@ -30,11 +23,10 @@ if [[ -n "$configFile" ]]; then
 fi
 
 # Step 1. Login in to the platform
-# Login into the platform (with pat=true)
-./playground login --pat=true
-EXIT=$?
+# Login into the platform (with pat flag)
+./playground login --pat
 if [[ $? -ne 0 ]]; then
-    printExit  
+    exit -1
 fi
 
 
@@ -42,15 +34,13 @@ fi
 # if environment!= "" -> use it!
 if [[ -n "$environment" ]]; then
     ./playground env use ${environment}
-    EXIT=$?
-    if [[ $? -ne 0 ]]; then
-        printExit
+    if [[ $? -ne 0 ]]; then    
+        exit -1
     fi
 fi
 
 # execute the command
 ./playground ${cmd} 
-EXIT=$?
-printExit
+exit $?
 
 
