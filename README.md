@@ -1,12 +1,14 @@
 # PLAYGROUND-GITHUB-ACTIONS
 
-With playground github action you will execute a Napptive playground command
+With playground github action you will execute a Napptive playground command.
+
+Napptive playground simplifies the process to depoy and maintenance cloud-native applications. [Get a free account!!](https://playground.napptive.dev/login)
 
 ## Environment variable
 
 ### `PLAYGROUND_PAT`
 
-This environment variable contains a Napptive Personal Access Token. Visit [Napptive documentation](https://docs.napptive.com/guides/Using_personal_access_tokens.html) to know how to create it.
+This environment variable contains a [Napptive Personal Access Token](https://docs.napptive.com/guides/Using_personal_access_tokens.html) used to login to the platform.
 
 ## Inputs
 
@@ -48,7 +50,9 @@ Copyright 2020 Napptive
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
-You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+You may obtain a copy of the License at [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 See the License for the specific language governing permissions and
 limitations under the License.
