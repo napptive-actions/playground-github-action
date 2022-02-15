@@ -20,9 +20,10 @@ The playground command to run. This input is __required__
 
 To specify a target account/environment if proceed. No __required__ input.
 
-### `config`
+### `playgroundConfigFile`
 
 To use a custom YAML file to change the target playground installation. No __required__
+This file contains a playground installation configuration. Visit [napptive documentation](https://docs.napptive.com/playground/On_premise_configuration.html#configuration-file) to know how to create it.
 
 ## Example usage
 

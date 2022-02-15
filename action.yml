@@ -8,7 +8,7 @@ inputs:
   environment:
     description: 'To specify a target account/environment'
     required: false
-  config:
+  playgroundConfigFile:
     description: 'To use a custom YAML file to change the target playground installation'
     required: false
 runs:
@@ -17,7 +17,7 @@ runs:
   args:
     - ${{ inputs.cmd }}
     - ${{ inputs.environment }}
-    - ${{ inputs.config }}
+    - ${{ inputs.playgroundConfigFile }}
 branding:
   icon: 'play'  
   color: 'blue'
