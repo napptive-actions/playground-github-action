@@ -1,0 +1,23 @@
+name: 'Napptive Playground action'
+author: 'Napptive'
+description: 'Execute Napptive Playground commands. The Playground offers a managed service to deploy complex cloud-native applications without the difficulty of working at the Kubernetes level'
+inputs:
+  cmd:
+    description: 'Command to execute'
+    required: true
+  environment:
+    description: 'To specify a target account/environment'
+    required: false
+  playgroundConfigFile:
+    description: 'To use a custom YAML file to change the target playground installation'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cmd }}
+    - ${{ inputs.environment }}
+    - ${{ inputs.playgroundConfigFile }}
+branding:
+  icon: 'play'  
+  color: 'blue'
