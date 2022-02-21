@@ -2,7 +2,7 @@
 
 With playground github action you will execute a Napptive playground command.
 
-Napptive playground simplifies the process to depoy and maintenance cloud-native applications. [Get a free account!!](https://playground.napptive.dev/login)
+Napptive playground simplifies the process to depoy and maintenance cloud-native applications. [Try for free!!](https://playground.napptive.dev/login)
 
 ## Environment variable
 
