@@ -10,9 +10,6 @@ cmd=$1
 environment=$2
 configFile=$3
 
-# add actual dir to the path to allow execute the playground command
-# required in deploy command
-export PATH=$PATH:./
 
 ## cmd cannot be empty
 if [[ -z "$cmd" ]]; then
@@ -28,7 +25,7 @@ fi
 
 # Step 1. Login in to the platform
 # Login into the platform (with pat flag)
-./playground login --pat
+/app/playground login --pat
 if [[ $? -ne 0 ]]; then
     exit -1
 fi
@@ -37,14 +34,14 @@ fi
 
 # if environment!= "" -> use it!
 if [[ -n "$environment" ]]; then
-    ./playground env use ${environment}
+    /app/playground env use ${environment}
     if [[ $? -ne 0 ]]; then    
         exit -1
     fi
 fi
 
 # execute the command
-./playground ${cmd} 
+/app/playground ${cmd} 
 exit $?
 
 
