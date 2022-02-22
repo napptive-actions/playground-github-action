@@ -32,7 +32,7 @@ name: List deployed applications
 on: [push]
 jobs:
   deploy:
-    name: Playground deploy
+    name: Playground List applications
     runs-on: ubuntu-latest
     steps:
       # Get a copy of the repo.
