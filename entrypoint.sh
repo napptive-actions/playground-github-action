@@ -14,7 +14,7 @@ configFile=$3
 ## cmd cannot be empty
 if [[ -z "$cmd" ]]; then
     echo "cmd can not be empty"
-    exit -1
+    exit 1
 fi
 
 # if there is a configFile...
@@ -30,7 +30,7 @@ export PATH=$PATH:/app/
 # Login into the platform (with pat flag)
 /app/playground login --pat
 if [[ $? -ne 0 ]]; then
-    exit -1
+    exit 1
 fi
 
 
@@ -39,7 +39,7 @@ fi
 if [[ -n "$environment" ]]; then
     /app/playground env use ${environment}
     if [[ $? -ne 0 ]]; then    
-        exit -1
+        exit 1
     fi
 fi
 
