@@ -18,9 +18,6 @@ if [[ -z "$cmd" ]]; then
     exit 1
 fi
 
-# configurationPath with the path where the installation is, empty by default
-configurationPath=""
-
 # if there is a configFile...
 if [[ -n "$configFile" ]]; then
     echo "using custom installation from $configFile "    
@@ -29,7 +26,9 @@ if [[ -n "$configFile" ]]; then
     if [[ $? -ne 0 ]]; then
       exit 1
     fi
-    configurationPath="/napptive/"
+    export PLAYGROUND_CONFIG=/napptive/
+    echo "PLAYGROUND_CONFIG env added: $PLAYGROUND_CONFIG"    
+
 fi
 
 # add app dir to the path to allow execute the playground command
@@ -37,7 +36,7 @@ export PATH=$PATH:/app/
 
 # Step 1. Login in to the platform
 # Login into the platform (with pat flag)
-/app/playground login --pat --debug=$debug --configurationPath=$configurationPath
+/app/playground login --pat --debug=$debug 
 if [[ $? -ne 0 ]]; then
     exit 1
 fi
@@ -46,14 +45,14 @@ fi
 
 # if environment!= "" -> use it!
 if [[ -n "$environment" ]]; then
-    /app/playground env use ${environment} --debug=$debug --configurationPath=$configurationPath
+    /app/playground env use ${environment} --debug=$debug 
     if [[ $? -ne 0 ]]; then    
         exit 1
     fi
 fi
 
 # execute the command
-/app/playground ${cmd} --debug=$debug --configurationPath=$configurationPath
+/app/playground ${cmd} --debug=$debug
 exit $?
 
 
