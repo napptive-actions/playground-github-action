@@ -2,6 +2,10 @@ name: 'Napptive Playground action'
 author: 'Napptive'
 description: 'Execute Napptive Playground commands. The Playground offers a managed service to deploy complex cloud-native applications without the difficulty of working at the Kubernetes level'
 inputs:
+  debug:
+    description: 'Debug flag in commands'
+    required: false
+    default: false
   cmd:
     description: 'Command to execute'
     required: true
@@ -15,6 +19,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.debug }}
     - ${{ inputs.cmd }}
     - ${{ inputs.environment }}
     - ${{ inputs.playgroundConfigFile }}
