@@ -1,6 +1,6 @@
 name: 'Napptive Playground action'
 author: 'Napptive'
-description: 'Execute Napptive Playground commands. The Playground offers a managed service to deploy complex cloud-native applications without the difficulty of working at the Kubernetes level'
+description: 'Execute Napptive Playground commands. The Playground offers a managed service to deploy complex cloud-native applications.'
 inputs:
   debug:
     description: 'Debug flag in commands'
