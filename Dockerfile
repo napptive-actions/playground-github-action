@@ -1,4 +1,4 @@
-FROM napptive/playground:v3.1.0
+FROM napptive/playground:v4.0.0
 
 COPY entrypoint.sh /entrypoint.sh
 
