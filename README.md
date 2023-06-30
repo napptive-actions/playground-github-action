@@ -38,7 +38,7 @@ jobs:
       # Get a copy of the repo.
       - uses: actions/checkout@v2
       # Execute `playground apps`.
-      - uses: napptive-actions/playground-github-action@v6.0.1
+      - uses: napptive-actions/playground-github-action@v6.0.2
         env:
           PLAYGROUND_PAT: ${{ secrets.PLAYGROUND_PAT }}
         with:
