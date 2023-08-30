@@ -1,14 +1,14 @@
 # PLAYGROUND-GITHUB-ACTIONS
 
-With playground github action you will execute a Napptive playground command.
+With playground GitHub action you will execute a Napptive playground command.
 
-Napptive playground simplifies the process to depoy and maintenance cloud-native applications. [Try for free!!](https://playground.napptive.dev/login)
+Napptive playground simplifies the process to deploy and maintenance cloud-native applications. [Try for free!!](https://playground.napptive.dev/login)
 
 ## Environment variable
 
 ### `PLAYGROUND_PAT`
 
-This environment variable contains a [Napptive Personal Access Token](https://docs.napptive.com/guides/Using_personal_access_tokens.html) used to login to the platform.
+This environment variable contains a [Napptive Personal Access Token](https://docs.napptive.com/guides/Using_personal_access_tokens.html) used to log in to the platform.
 
 ## Inputs
 
@@ -18,7 +18,7 @@ The playground command to run. This input is __required__
 
 ### `environment`
 
-To specify a target account/environment if proceed. No __required__ input.
+To specify a target account/environment if proceeded. No __required__ input.
 
 ### `playgroundConfigFile`
 
@@ -38,7 +38,7 @@ jobs:
       # Get a copy of the repo.
       - uses: actions/checkout@v2
       # Execute `playground apps`.
-      - uses: napptive-actions/playground-github-action@v6.0.2
+      - uses: napptive-actions/playground-github-action@v6.1.0
         env:
           PLAYGROUND_PAT: ${{ secrets.PLAYGROUND_PAT }}
         with:
