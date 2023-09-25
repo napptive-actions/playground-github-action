@@ -1,0 +1,31 @@
+name: Upload a new release
+on:
+  push:
+    tags:
+      - "v*" #Napptive uses Semantic Versioning with the prefix 'v'
+jobs:
+  docker:
+    name: Push Docker Release Images
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get the version
+        id: get_version
+        run: echo "version=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKER_HUB_USER}}
+          password: ${{secrets.DOCKER_HUB_TOKEN}}
+
+      - name: Build and push Docker images
+        run: docker/build-push-action@v5
+        with:
+          push: true
+          tags: napptive/app:${{ steps.get_version.outputs.version }}
+        env:
+          VERSION: ${{ steps.get_version.outputs.version }}
+          TARGET_DOCKER_REGISTRY: napptive
