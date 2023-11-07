@@ -23,7 +23,7 @@ To specify a target account/environment if proceeded. No __required__ input.
 ### `playgroundConfigFile`
 
 To use a custom YAML file to change the target playground installation. No __required__
-This file contains a playground installation configuration. Visit [documentation](https://docs.napptive.com/playground/On_premise_configuration.html#configuration-file) for an example.
+This file contains a playground installation configuration. Visit [documentation](https://docs.napptive.com/playground/cli/On_premise_configuration.html#configuration-file) for an example.
 
 ## Example usage
 
